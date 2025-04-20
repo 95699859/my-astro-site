@@ -1,0 +1,18 @@
+<div id="theme-toggle">
+  <button onclick="toggleTheme()">🌓 Сменить тему</button>
+</div>
+
+<script is:inline>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  // Инициализация темы
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+</script>

@@ -1,0 +1,19 @@
+---
+import Header from '../components/Header.astro';
+const { pageTitle } = Astro.props;
+---
+
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{pageTitle}</title>
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+  <Header title={pageTitle} />
+  <main>
+    <slot />
+  </main>
+</body>
+</html>

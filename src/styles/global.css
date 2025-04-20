@@ -1,0 +1,25 @@
+:root {
+    --text-primary: #1a1a1a;
+    --nav-bg: #f8f8f8;
+    --bg-primary: #ffffff;
+  
+    [data-theme="dark"] {
+      --text-primary: #ffffff;
+      --nav-bg: #2d2d2d;
+      --bg-primary: #1a1a1a;
+    }
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui;
+    line-height: 1.6;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 0.3s, color 0.3s;
+  }
