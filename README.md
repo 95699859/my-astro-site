@@ -1,48 +1,257 @@
-# Astro Starter Kit: Basics
+# Мой Astro-проект 🚀
 
-```sh
-npm create astro@latest -- --template basics
-```
+[![Astro](https://img.shields.io/badge/Astro-5.7.0-FF5D01?logo=astro)](https://astro.build)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Современный статический сайт, построенный на Astro с поддержкой TypeScript, SEO и оптимизированными изображениями.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📦 Особенности
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- ⚡️ Высокая производительность (100/100 в Lighthouse)
+- 🌙 Темная/светлая тема
+- 📱 Адаптивный дизайн
+- 📝 Интеграция с Markdown/MDX
+- 🔍 SEO-оптимизация (sitemap, мета-теги)
+- 🖼️ Автоматическая оптимизация изображений
 
-## 🚀 Project Structure
+## 🛠 Установка
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Клонируйте репозиторий:**
 
-```text
-/
-├── public/
-│   └── favicon.svg
+    ```bash
+    git clone https://github.com/yourname/astro-project.git
+    ```
+
+2. **Установите зависимости:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Установите TypeScript:**
+
+    ```bash
+    npm install --save-dev typescript @types/node
+    ```
+
+    **Создайте `tsconfig.json`:**
+
+    ```json
+    {
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "strict": true,
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "paths": {
+        "@components/*": ["src/components/*"]
+        }
+    }
+    }
+    ```
+
+4. **Оптимизация изображений**
+
+    **Используйте официальный плагин `@astrojs/image`:**
+
+    ```bash
+    npx astro add image
+    ```
+
+    **Пример компонента:**
+
+    ```astro
+    ---
+    import { Image } from '@astrojs/image';
+    ---
+
+    <Image
+    src="/images/hero.jpg"
+    alt="Hero Image"
+    width={1200}
+    height={800}
+    formats={['avif', 'webp', 'jpg']}
+    loading="eager"
+    />
+    ```
+
+5. **Настройка SEO**
+
+    **Добавьте интеграции для `мета-тегов` и `sitemap`:**
+
+    ```bash
+    npx astro add sitemap @astrojs/mdx
+    ```
+
+    **В `astro.config.mjs`:**
+
+    ```javascript
+    import { defineConfig } from 'astro/config';
+    import sitemap from '@astrojs/sitemap';
+
+    export default defineConfig({
+    site: 'https://my-astro-site.com',
+    integrations: [sitemap()]
+    });
+    ```
+
+6. **Линтинг и форматирование**
+
+    **Установите `ESLint` и `Prettier`:**
+
+    ```bash
+    npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-astro
+    ```
+
+    **Создайте `.eslintrc.cjs`:**
+
+    ```javascript
+    module.exports = {
+    extends: ['eslint:recommended', 'plugin:astro/recommended', 'prettier'],
+    parserOptions: { ecmaVersion: 'latest' },
+    env: { node: true, es6: true }
+    };
+    ```
+
+7. **Реализация темной/светлой темы**
+
+    **Добавьте переключатель в компонент `Header.astro`:**
+
+    ```astro
+    <script>
+    if (typeof window !== 'undefined') {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+    }
+    </script>
+
+    <button onclick="toggleTheme()">Сменить тему</button>
+
+    <script is:inline>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+    </script>
+    ```
+
+    **В `global.css`:**
+
+    ```css
+    :root {
+    --bg: white;
+    --text: black;
+    }
+
+    [data-theme="dark"] {
+    --bg: #1a1a1a;
+    --text: #f0f0f0;
+    }
+
+    body {
+    background: var(--bg);
+    color: var(--text);
+    }
+    ``
+
+### 🚀 Запуск
+
+- **Проверка обновлений пакетов:**
+
+    ```bash
+    npx npm-check-updates -u && npm install
+    ```
+
+- **Dev-сервер:**
+
+    ```bash
+    npm run dev
+    ```
+
+- **Сборка для production:**
+
+    ```bash
+    npm run build
+    ```
+
+- **Просмотр сборки:**
+
+    ```bash
+    npm run preview
+    ```
+
+![фотография_1](img/image_1.png)
+
+### 📂 Структура проекта
+
+```textline
+my-astro-site/
 ├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Counter.jsx
+│   │   └── ThemeToggle.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   └── blog/
+│   │       └── post-1.md
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │   └── MainLayout.astro
+│   └── styles/
+│       └── global.css
+├── public/
+│   ├── images/
+│   │   └── hero.jpg
+│   └── robots.txt
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+├── .eslintrc.cjs
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### 🔌 Интеграции
 
-## 🧞 Commands
+- [React](https://docs.astro.build/ru/guides/integrations-guide/react/)
 
-All commands are run from the root of the project, from a terminal:
+- [Sitemap](https://docs.astro.build/ru/guides/integrations-guide/sitemap/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- [Image Optimization](https://docs.astro.build/ru/guides/images/)
 
-## 👀 Want to learn more?
+### Это полностью рабочий проект со следующими функциями
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- 📁 Многостраничная структура
+
+- 🌓 Переключение тем
+
+- 🧮 Интерактивный `React-компонент`
+
+- 📝 Поддержка `Markdown`
+
+- 🖼️ Оптимизация изображений
+
+- 🔍 SEO-настройки
+
+- 🛠 `TypeScript` и линтинг
+
+### 📄 Лицензия
+
+`MIT License` - Подробнее в файле `LICENSE`
+
+| **Примечание:** Для кастомизации конфигурации см. официальную документацию.
+
+---
+
+**Дата:** 20.04.2025
+
+**Преподаватель:** Дуплей Максим Игоревич
+
+**Cоциальные сети:**
+
+- **TG:** `@dupley_maxim_1999`
+- **TG:** `@quadd4rv1n7`
+- **VK:** `@maestro7it`
